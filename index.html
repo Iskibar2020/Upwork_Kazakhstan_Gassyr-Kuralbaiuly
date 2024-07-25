@@ -11,30 +11,52 @@
             height: 600px;
         }
 
+
+
+        .leaflet-popup-content-wrapper,
+        .leaflet-popup-tip {
+            background-color: rgba(50, 50, 50, .9);
+            width: 320px;
+        }
+
+        .leaflet-popup-content {
+            margin: 10px;
+            width: 300px;
+        }
+
+        .leaflet-popup-close-button {
+            color: red;
+            /* Change this to your desired color */
+        }
+
         .popup-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto auto auto;
             gap: 5px;
-            width: 200px;
+            width: 300px;
         }
 
-        .popup-content h4 {
+        .popup-content h3 {
             grid-column: span 2;
             margin: 0;
             font-size: 16px;
             font-weight: bold;
+            color: #ffc84b;
         }
 
         .popup-content p {
             grid-column: span 2;
             margin: 5px 0;
-            font-size: 14px;
+            font-size: 12px;
+            color: #f0f0f0;
+            text-align: justify;
+            text-justify: inter-word;
         }
 
         .popup-content .population {
             grid-column: span 1;
-            font-size: 14px;
+            font-size: 12px;
         }
 
         .popup-content .button-container {
@@ -44,11 +66,11 @@
         }
 
         .popup-content button {
-            width: 48%;
+            width: 100%;
             padding: 5px;
-            font-size: 14px;
+            font-size: 12px;
             cursor: pointer;
-            background-color: #4CAF50;
+            background-color: rgba(50, 50, 50, .9);
             color: white;
             border: none;
             text-align: center;
@@ -89,12 +111,12 @@
                 title: "Pavlodar Region",
                 content: `
                     <div class="popup-content">
-                        <h4>Pavlodar Region</h4>
+                        <h3>Pavlodar Region</h3>
                         <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
-                        <p class="population">Population: 751000</p>
-                        <p class="population">Population: 751000</p>
-                        <p class="population">Population: 751000</p>
-                        <p class="population">Population: 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
                         <button><a href="#" target="_blank">Learn More</a></button>
                         <button><a href="#" target="_blank">Industrial Insights</a></button>
                     </div>
