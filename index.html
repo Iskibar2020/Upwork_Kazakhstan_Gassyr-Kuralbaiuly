@@ -6,6 +6,9 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
+    <link href="http://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
     <style>
         #map {
             height: 600px;
@@ -86,32 +89,29 @@
 <body>
     <div id="map"></div>
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script
+        src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.min.js"></script>
+
     <script>
         // Initialize the map
-        var map = L.map('map').setView([51.505, -0.09], 13);
+        var map = L.map('map').setView([43.0738056, 68.8423406], 7);
 
         // Add OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '© OpenStreetMap'
         }).addTo(map);
+        var customIcon = L.AwesomeMarkers.icon({ icon: 'briefcase', prefix: 'fa', markerColor: 'orange' });
 
-        // Custom icon
-        var customIcon = L.icon({
-            iconUrl: 'https://example.com/custom-marker.png', // Replace with your custom marker image URL
-            iconSize: [38, 95], // size of the icon
-            iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
-            popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
-        });
 
         // Array of points with detailed information
         var points = [
             {
-                coords: [51.505, -0.09],
-                title: "Pavlodar Region",
+                coords: [43.0738056, 68.8423406],
+                title: "Baydibek District",
                 content: `
                     <div class="popup-content">
-                        <h3>Pavlodar Region</h3>
+                        <h3>Baydibek District</h3>
                         <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
                         <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
                         <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
@@ -122,7 +122,230 @@
                     </div>
                 `
             },
-            // Add more points with similar structure
+            {
+                coords: [41.9362335, 69.6182907],
+                title: "Keles",
+                content: `
+                    <div class="popup-content">
+                        <h3>Keles</h3>
+                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <button><a href="#" target="_blank">Learn More</a></button>
+                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                    </div>
+                `
+            },
+            {
+                coords: [41.8891694, 69.2493855],
+                title: "Kazygurt District",
+                content: `
+                    <div class="popup-content">
+                        <h3>Kazygurt District</h3>
+                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <button><a href="#" target="_blank">Learn More</a></button>
+                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                    </div>
+                `
+            },
+            {
+                coords: [40.8081705, 68.1028957],
+                title: "Maktaaral District",
+                content: `
+                    <div class="popup-content">
+                        <h3>Maktaaral District</h3>
+                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <button><a href="#" target="_blank">Learn More</a></button>
+                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                    </div>
+                `
+            },
+            {
+                coords: [42.6260704, 68.8352585],
+                title: "Ordabasy District",
+                content: `
+                    <div class="popup-content">
+                        <h3>Ordabasy District</h3>
+                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <button><a href="#" target="_blank">Learn More</a></button>
+                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                    </div>
+                `
+            },
+            {
+                coords: [42.4932502, 66.8384895],
+                title: "Otyrar District",
+                content: `
+                    <div class="popup-content">
+                        <h3>Otyrar District</h3>
+                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <button><a href="#" target="_blank">Learn More</a></button>
+                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                    </div>
+                `
+            },
+            {
+                coords: [41.6483048, 68.4088723],
+                title: "Saryagash District",
+                content: `
+                    <div class="popup-content">
+                        <h3>Saryagash District</h3>
+                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <button><a href="#" target="_blank">Learn More</a></button>
+                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                    </div>
+                `
+            },
+            {
+                coords: [44.682263, 67.1749084],
+                title: "Sozak District",
+                content: `
+                    <div class="popup-content">
+                        <h3>Sozak District</h3>
+                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <button><a href="#" target="_blank">Learn More</a></button>
+                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                    </div>
+                `
+            },
+            {
+                coords: [42.1646415, 69.8510829],
+                title: "Tole Bi District",
+                content: `
+                    <div class="popup-content">
+                        <h3>Tole Bi District</h3>
+                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <button><a href="#" target="_blank">Learn More</a></button>
+                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                    </div>
+                `
+            },
+            {
+                coords: [42.5729529, 69.9451029],
+                title: "Tulkibas District",
+                content: `
+                    <div class="popup-content">
+                        <h3>Tulkibas District</h3>
+                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <button><a href="#" target="_blank">Learn More</a></button>
+                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                    </div>
+                `
+            },
+            {
+                coords: [41.5734976, 66.9168929],
+                title: "Shardara District",
+                content: `
+                    <div class="popup-content">
+                        <h3>Shardara District</h3>
+                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <button><a href="#" target="_blank">Learn More</a></button>
+                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                    </div>
+                `
+            },
+            {
+                coords: [42.4008131, 69.3361139],
+                title: "Sayram District",
+                content: `
+                    <div class="popup-content">
+                        <h3>Sayram District</h3>
+                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <button><a href="#" target="_blank">Learn More</a></button>
+                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                    </div>
+                `
+            },
+            {
+                coords: [42.4204085, 68.7913655],
+                title: "Arys",
+                content: `
+                    <div class="popup-content">
+                        <h3>Arys</h3>
+                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <button><a href="#" target="_blank">Learn More</a></button>
+                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                    </div>
+                `
+            },
+            {
+                coords: [43.5135078, 68.4852075],
+                title: "Kentau",
+                content: `
+                    <div class="popup-content">
+                        <h3>Kentau</h3>
+                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <button><a href="#" target="_blank">Learn More</a></button>
+                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                    </div>
+                `
+            },
+            {
+                coords: [43.3037369, 68.2193892],
+                title: "Turkistan",
+                content: `
+                    <div class="popup-content">
+                        <h3>Turkistan</h3>
+                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <button><a href="#" target="_blank">Learn More</a></button>
+                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                    </div>
+                `
+            },
         ];
 
         // Add points to the map
