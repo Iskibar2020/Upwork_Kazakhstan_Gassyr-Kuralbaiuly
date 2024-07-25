@@ -27,11 +27,6 @@
             width: 350px;
         }
 
-        .leaflet-popup-close-button {
-            color: red;
-            /* Change this to your desired color */
-        }
-
         .popup-content {
             display: grid;
             grid-template-columns: 1fr 1fr;
@@ -114,20 +109,27 @@
 
         // Array of points with detailed information
         var points = [
-            /*
+
             {
                 coords: [43.0738056, 68.8423406],
                 title: "Baydibek District",
                 content: `
                     <div class="popup-content">
-                        <h3>Baydibek District</h3>
-                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;text-align:left"> Общая площадь</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Население <br></span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Численность действующих МСБ</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Инвестиции в основной капитал</span> 751000</p>
-                        <button><a href="#" target="_blank">Learn More</a></button>
-                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                        <h3>бәйдібек ауданы</h3>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Общая площадь: </span> 721,9 тыс. га </p>
+                        <li>пашни: 112,3 тыс. га (орошаемые: 11,8 тыс. га)</li>
+                        <li>пастбища: 387,3 тыс. га</li>
+                        <li>посевная площадь: 101,4 тыс. га</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Население: </span> 54,5 тыс. человек (17-е место по ТО)</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Численность действующих МСБ:</span> 4 568</p>
+                        <li>юридические лица: 543</li>
+                        <li>индивидуальные предприниматели: 1,630</li>
+                        <li>крестьянские/фермерские хозяйства: 2,395</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Инвестиции в основной капитал:</span> 14,7 млрд. тенге (14-е место по ТО)</p>
+                        <li>сельское хозяйство: 7,9 млрд. тенге (2-е место по ТО)</li>
+                        <li>транспорт и складирование: 2,6 млрд. тенге</li>
+                        <li>операции с недвижимым имуществом: 1,9 млрд. тенге</li>
+                        <button><a href="#" target="_blank"></a></button>
                     </div>
                 `
             },
@@ -136,14 +138,22 @@
                 title: "Keles",
                 content: `
                     <div class="popup-content">
-                        <h3>Keles</h3>
-                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Общая площадь</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <button><a href="#" target="_blank">Learn More</a></button>
-                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                        <h3>Келес ауданы</h3>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Общая площадь: </span> 345,1 тыс. га </p>
+                        <li>пашни: 22,1 тыс. га</li>
+                        <li>пастбища: 203,6 тыс. га</li>
+                        <li>посевная площадь: 23,4 тыс. га</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Население: </span> 145,2 тыс. человек (5-е место по ТО)</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Численность действующих МСБ:</span> 5 300</p>
+                        <li>юридические лица: 316</li>
+                        <li>индивидуальные предприниматели: 3 244</li>
+                        <li>крестьянские/фермерские хозяйства: 4 535</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">10,9 млрд. тенге (16-е место по ТО)/p>
+                        <li>снабжение электроэнергией: 1,1 млрд. тенге</li>
+                        <li>сельское хозяйство: 4,2 млрд. тенге</li>
+                        <li>водоснабжение: 2,8 млрд. тенге</li>
+                        <li>образование: 1,4 млрд. тенге</li>
+                        <button><a href="#" target="_blank"></a></button>
                     </div>
                 `
             },
@@ -152,14 +162,21 @@
                 title: "Kazygurt District",
                 content: `
                     <div class="popup-content">
-                        <h3>Kazygurt District</h3>
-                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <button><a href="#" target="_blank">Learn More</a></button>
-                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                        <h3>Қазығұрт ауданы</h3>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Общая площадь: </span> 409,3 тыс. га </p>
+                        <li>пашни: 100,9 тыс. га (орошаемые – 13,5 тыс. га)</li>
+                        <li>пастбища: 133,8 тыс. га</li>
+                        <li>посевная площадь: 90,3 тыс. га</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Население: </span> 110,3 тыс. человек (10-е место по ТО)</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Численность действующих МСБ:</span> 10 884</p>
+                        <li>юридические лица: 838</li>
+                        <li>индивидуальные предприниматели: 5 000</li>
+                        <li>крестьянские/фермерские хозяйства: 5 046</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">18,2 млрд. тенге (10-е место по ТО)</p>
+                        <li>сельское хозяйство: 4,7 млрд. тенге</li>
+                        <li>транспорт и складирование: 2,5 млрд. тенге</li>
+                        <li>операции с недвижимым имуществом: 1,8 млрд. тенге</li>
+                        <button><a href="#" target="_blank"></a></button>
                     </div>
                 `
             },
@@ -168,14 +185,21 @@
                 title: "Maktaaral District",
                 content: `
                     <div class="popup-content">
-                        <h3>Maktaaral District</h3>
-                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <button><a href="#" target="_blank">Learn More</a></button>
-                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                        <h3>Мақтарал ауданы</h3>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Общая площадь: </span> 80,8 тыс. га </p>
+                        <li>пашни: 61,2 тыс. га (орошаемые – 58,8 тыс. га)</li>
+                        <li>пастбища: 1,4 тыс. га</li>
+                        <li>посевная площадь: 60,7 тыс. га</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Население: </span> 135,5 тыс. человек (6-е место по ТО)</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Численность действующих МСБ:</span> 11 052</p>
+                        <li>юридические лица: 442</li>
+                        <li>индивидуальные предприниматели: 2 704</li>
+                        <li>крестьянские/фермерские хозяйства: 7 906</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">20,7 млрд. тенге (9-е место по ТО)</p>
+                        <li>промышленность: 10,5 млрд. тенге</li>
+                        <li>операции с недвижимым имуществом: 5,2 млрд. тенге</li>
+                        <li>операции сельское хозяйство: 1,6 млрд. тенг</li>
+                        <button><a href="#" target="_blank"></a></button>
                     </div>
                 `
             },
@@ -184,46 +208,69 @@
                 title: "Ordabasy District",
                 content: `
                     <div class="popup-content">
-                        <h3>Ordabasy District</h3>
-                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <button><a href="#" target="_blank">Learn More</a></button>
-                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                        <h3>Ордабасы ауданы</h3>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Общая площадь: </span> 265,6 тыс. га </p>
+                        <li>пашни: 71,3 тыс. га (орошаемые – 32,7 тыс. га)</li>
+                        <li>пастбища: 103,9 тыс. га</li>
+                        <li>посевная площадь: 66,4 тыс. га</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Население: </span> 124,4 тыс. человек (7-е место по ТО)</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Численность действующих МСБ:</span> 11 955</p>
+                        <li>юридические лица: 866</li>
+                        <li>индивидуальные предприниматели: 5 011</li>
+                        <li>крестьянские/фермерские хозяйства: 6 078</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">22,9 млрд. тенге (8-е место по ТО)</p>
+                        <li>сельское хозяйство: 6,6 млрд. тенге</li>
+                        <li>обрабатывающая промышленность: 3,8 млрд. тенге</li>
+                        <li>операции с недвижимым имуществом: 2,5 млрд. тенге</li>
+                        <button><a href="#" target="_blank"></a></button>
                     </div>
                 `
             },
+
             {
                 coords: [42.4932502, 66.8384895],
                 title: "Otyrar District",
                 content: `
                     <div class="popup-content">
-                        <h3>Otyrar District</h3>
-                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <button><a href="#" target="_blank">Learn More</a></button>
-                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                        <h3>Отырар ауданы</h3>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Общая площадь: </span> 1 675,7 тыс. га </p>
+                        <li>пашни: 45,9 тыс. га (орошаемые – 45,9 тыс. га)</li>
+                        <li>пастбища: 592,5 тыс. га</li>
+                        <li>посевная площадь: 34,9 тыс. га</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Население: </span> 54,7 тыс. человек (16-е место по ТО)</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Численность действующих МСБ:</span> 5 239</p>
+                        <li>юридические лица: 670</li>
+                        <li>индивидуальные предприниматели: 1 829</li>
+                        <li>крестьянские/фермерские хозяйства: 2 740</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">15,9 млрд. тенге (12-е место по ТО)</p>
+                        <li>промышленность: 8,3 млрд. тенге</li>
+                        <li>сельское хозяйство: 3,3 млрд. тенге</li>
+                        <li>операции с недвижимым имуществом: 2,5 млрд. тенге</li>
+                        <button><a href="#" target="_blank"></a></button>
                     </div>
                 `
             },
+
             {
                 coords: [41.6483048, 68.4088723],
                 title: "Saryagash District",
                 content: `
                     <div class="popup-content">
-                        <h3>Saryagash District</h3>
-                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <button><a href="#" target="_blank">Learn More</a></button>
-                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                        <h3>Сарыағаш ауданы</h3>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Общая площадь: </span> 418,1 тыс. га </p>
+                        <li>пашни: 87,6 тыс. га (орошаемые – 24 тыс. га)</li>
+                        <li>пастбища: 294,6 тыс. га</li>
+                        <li>посевная площадь: 67,4 тыс. га</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Население: </span> 198,4 тыс. человек (2-е место по ТО)</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Численность действующих МСБ:</span> 17 977</p>
+                        <li>юридические лица: 1 209</li>
+                        <li>индивидуальные предприниматели: 10 816</li>
+                        <li>крестьянские/фермерские хозяйства: 5 952</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">15,7 млрд. тенге (13-е место по ТО)</p>
+                        <li>сельское хозяйство: 3,7 млрд. тенге</li>
+                        <li>операции с недвижимым имуществом: 3 млрд. тенге</li>
+                        <li>обрабатывающая промышленность: 1,3 млрд. тенге</li>
+                        <button><a href="#" target="_blank"></a></button>
                     </div>
                 `
             },
@@ -232,14 +279,20 @@
                 title: "Sozak District",
                 content: `
                     <div class="popup-content">
-                        <h3>Sozak District</h3>
-                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <button><a href="#" target="_blank">Learn More</a></button>
-                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                        <h3>Созақ ауданы</h3>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Общая площадь: </span> 4,1 млн. га </p>
+                        <li>пашни: 673,3 тыс. га</li>
+                        <li>посевная площадь: 14,3 тыс. га</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Население: </span> 63,6 тыс. человек (15-е место по ТО)</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Численность действующих МСБ:</span> 3 865</p>
+                        <li>юридические лица: 283</li>
+                        <li>индивидуальные предприниматели: 2 439</li>
+                        <li>крестьянские/фермерские хозяйства: 1 143</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">53,4 млрд. тенге (2-е место по ТО)</p>
+                        <li>горнодобывающая промышленностьи разработка карьеров: 43,7 млрд. тенге</li>
+                        <li>транспорт и складирование: 2,9 млрд. тенге</li>
+                        <li>сельское хозяйство: 0,4 млрд. тенге</li>
+                        <button><a href="#" target="_blank"></a></button>
                     </div>
                 `
             },
@@ -248,14 +301,21 @@
                 title: "Tole Bi District",
                 content: `
                     <div class="popup-content">
-                        <h3>Tole Bi District</h3>
-                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <button><a href="#" target="_blank">Learn More</a></button>
-                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                        <h3>Төлеби ауданы</h3>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Общая площадь: </span> 306,3 тыс. га </p>
+                        <li>пашни: 63,3 тыс. га (орошаемые – 9,8 тыс. га)</li>
+                        <li>пастбища: 26,0 тыс. га</li>
+                        <li>посевная площадь: 65,4 тыс. га</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Население: </span> 121,7 тыс. человек (8-е место по ТО)</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Численность действующих МСБ:</span> 7 882</p>
+                        <li>юридические лица: 567</li>
+                        <li>индивидуальные предприниматели: 4 132</li>
+                        <li>крестьянские/фермерские хозяйства: 3 183</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">16,5 млрд. тенге (11-е место по ТО)</p>
+                        <li>сельское хозяйство: 3,5 млрд. тенге</li>
+                        <li>обрабатывающая промышленность: 1,6 млрд. тенге</li>
+                        <li>операции с недвижимым имуществом: 2,9 млрд. тенге</li>
+                        <button><a href="#" target="_blank"></a></button>
                     </div>
                 `
             },
@@ -264,14 +324,21 @@
                 title: "Tulkibas District",
                 content: `
                     <div class="popup-content">
-                        <h3>Tulkibas District</h3>
-                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <button><a href="#" target="_blank">Learn More</a></button>
-                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                        <h3>Түлкібас ауданы</h3>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Общая площадь: </span> 227,5 тыс. га </p>
+                        <li>пашни: 63,2 тыс. га (орошаемые – 13,6 тыс. га)</li>
+                        <li>пастбища: 57,9 тыс. га</li>
+                        <li>посевная площадь: 63,9 тыс. га</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Население: </span> 113,8 тыс. человек (9-е место по ТО)</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Численность действующих МСБ:</span> 7 861</p>
+                        <li>юридические лица: 457</li>
+                        <li>индивидуальные предприниматели: 3 962</li>
+                        <li>крестьянские/фермерские хозяйства: 3 442</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Инвестиции в основной капитал:</span> 13,3 млрд. тенге (15-е место по ТО)</p>
+                        <li>сельское хозяйство: 3,2 млрд. тенге</li>
+                        <li>обрабатывающая промышленность: 2,3 млрд. тенге</li>
+                        <li>операции с недвижимым имуществом: 1,2 млрд. тенге</li>
+                        <button><a href="#" target="_blank"></a></button>
                     </div>
                 `
             },
@@ -280,14 +347,21 @@
                 title: "Shardara District",
                 content: `
                     <div class="popup-content">
-                        <h3>Shardara District</h3>
-                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <button><a href="#" target="_blank">Learn More</a></button>
-                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                        <h3>Арыс қаласы</h3>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Общая площадь: </span> 1 287,2 тыс. га </p>
+                        <li>пашни: 57,9 тыс. га (орошаемые – 57,9 тыс. га)</li>
+                        <li>пастбища: 113,5 тыс. га</li>
+                        <li>посевная площадь: 305,8 тыс. га</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Население: </span> 80,1 тыс. человек (13-е место по ТО)</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Численность действующих МСБ:</span> 9 062</p>
+                        <li>юридические лица: 380</li>
+                        <li>индивидуальные предприниматели: 2 951</li>
+                        <li>крестьянские/фермерские хозяйства: 5 731</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Инвестиции в основной капитал:</span> 28,7 млрд. тенге (5-е место по ТО)</p>
+                        <li>транспорт и складирование: 13,6 млрд. тенге</li>
+                        <li>промышленность: 7,1 млрд. тенге</li>
+                        <li>сельское хозяйство: 2,9 млрд. тенге</li>
+                        <button><a href="#" target="_blank"></a></button>
                     </div>
                 `
             },
@@ -296,18 +370,25 @@
                 title: "Sayram District",
                 content: `
                     <div class="popup-content">
-                        <h3>Sayram District</h3>
-                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <button><a href="#" target="_blank">Learn More</a></button>
-                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                        <h3>Сайрам ауданы</h3>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Общая площадь: </span> 114,7 тыс. га </p>
+                        <li>пашни: 51,9 тыс. га (орошаемые – 15,5 тыс. га)</li>
+                        <li>пастбища: 22,1 тыс. га</li>
+                        <li>посевная площадь: 50,4 тыс. га</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Население: </span> 226,2 тыс. человек (1-е место по ТО)</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Численность действующих МСБ:</span> 16 867</p>
+                        <li>юридические лица: 1 182</li>
+                        <li>индивидуальные предприниматели: 7 118</li>
+                        <li>крестьянские/фермерские хозяйства: 7 867</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Инвестиции в основной капитал:</span> 27,8 млрд. тенге (7-е место по ТО)</p>
+                        <li>операции с недвижимым имуществом: 6,7 млрд. тенге</li>
+                        <li>сельское хозяйство: 6 млрд. тенге</li>
+                        <li>обрабатывающая промышленность: 1,9 млрд. тенге</li>
+                        <button><a href="#" target="_blank"></a></button>
                     </div>
                 `
             },
-            */
+
             {
                 coords: [42.4204085, 68.7913655],
                 title: "Arys",
@@ -324,43 +405,56 @@
                         <li>индивидуальные предприниматели: 2 991</li>
                         <li>крестьянские/фермерские хозяйства: 1 012</li>
                         <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Инвестиции в основной капитал:</span> 9,1 млрд. тенге (17-е место по ТО)</p>
-                        <li>юридические лица: 642</li>
                         <li>обрабатывающая промышленность: 4,4 млрд. тенге</li>
+                        <li>операции с недвижимым имуществом: 1,7 млрд. тенге</li>
                         <li>сельское хозяйство: 1,3 млрд. тенге</li>
                         <button><a href="#" target="_blank"></a></button>
                     </div>
                 `
             },
-            /*
+
             {
                 coords: [43.5135078, 68.4852075],
                 title: "Kentau",
                 content: `
                     <div class="popup-content">
-                        <h3>Kentau</h3>
-                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <button><a href="#" target="_blank">Learn More</a></button>
-                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                        <h3>Кентау қаласы</h3>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Общая площадь: </span> 52,8 тыс. га (площадь города Кентау – 5,3 тыс. га) </p>
+                        <li>пашни: 4,2 тыс. га (орошаемые: 2,3 тыс. га)</li>
+                        <li>пастбища: 35,1 тыс. га</li>
+                        <li>посевная площадь: 2,6 тыс. га</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Население: </span> 103,7 тыс. человек (12-е место по ТО)</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Численность действующих МСБ:</span> 4 962</p>
+                        <li>юридические лица: 374</li>
+                        <li>индивидуальные предприниматели: 4 227</li>
+                        <li>крестьянские/фермерские хозяйства: 361</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Инвестиции в основной капитал:</span> 32,4 млрд. тенге (4-е место по ТО)</p>
+                        <li>снабжение электроэнергией: 23 млрд. тенге</li>
+                        <li>операции с недвижимым имуществом: 4,8 млрд. тенге</li>
+                        <li>образование: 1,2 млрд. тенге</li>
+                        <button><a href="#" target="_blank"></a></button>
                     </div>
                 `
             },
+
             {
                 coords: [43.3037369, 68.2193892],
                 title: "Turkistan",
                 content: `
                     <div class="popup-content">
-                        <h3>Turkistan</h3>
-                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <button><a href="#" target="_blank">Learn More</a></button>
-                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                        <h3>Түркістан қаласы</h3>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Общая площадь: </span> 22,2 тыс. га </p>
+                        <li>посевная площадь: 684 га</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Население: </span> 194,8 тыс. человек (3-е место по ТО)</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Численность действующих МСБ:</span> 15 701</p>
+                        <li>юридические лица: 1 519</li>
+                        <li>индивидуальные предприниматели: 13 861</li>
+                        <li>крестьянские/фермерские хозяйства: 321</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Инвестиции в основной капитал:</span> 286 млрд. тенге (1-е место по ТО)</p>
+                        <li>туризм: 91,3 млрд. тенге</li>
+                        <li>операции с недвижимым имуществом: 88,2 млрд. тенге</li>
+                        <li>промышленность: 16,9 млрд. тенге</li>
+                        <button><a href="#" target="_blank"></a></button>
                     </div>
                 `
             },
@@ -369,14 +463,21 @@
                 title: "Zhetisay District",
                 content: `
                     <div class="popup-content">
-                        <h3>Turkistan</h3>
-                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <button><a href="#" target="_blank">Learn More</a></button>
-                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                        <h3>Жетісай ауданы</h3>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Общая площадь: </span> 104,6 тыс. га </p>
+                        <li>пашни: 77 тыс. га (орошаемые – 77 тыс. га)</li>
+                        <li>пастбища: 1,5 тыс. га</li>
+                        <li>посевная площадь: 79,3 тыс. га</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Население: </span> 176,7 тыс. человек (4-е место по ТО)</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Численность действующих МСБ:</span> 17 450</p>
+                        <li>юридические лица: 796</li>
+                        <li>индивидуальные предприниматели: 6 801</li>
+                        <li>крестьянские/фермерские хозяйства: 9 853</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Инвестиции в основной капитал:</span> 28,1 млрд. тенге (6-е место по ТО)</p>
+                        <li>обрабатывающая промышленность: 20,1 млрд. тенге</li>
+                        <li>операции с недвижимым имуществом: 3,1 млрд. тенге</li>
+                        <li>сельское хозяйство: 2,4 млрд. тенге</li>
+                        <button><a href="#" target="_blank"></a></button>
                     </div>
                 `
             },
@@ -385,17 +486,24 @@
                 title: "Sauran",
                 content: `
                     <div class="popup-content">
-                        <h3>Turkistan</h3>
-                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <button><a href="#" target="_blank">Learn More</a></button>
-                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                        <h3>Сауран ауданы</h3>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Общая площадь: </span> 721 тыс. га </p>
+                        <li>пашни: 40 тыс. га</li>
+                        <li>пастбища: 295 тыс. га</li>
+                        <li>посевная площадь: 40,9 тыс. га</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Население: </span> 106,8 тыс. человек (11-е место по ТО)</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Численность действующих МСБ:</span> 5 300</p>
+                        <li>юридические лица: 225</li>
+                        <li>индивидуальные предприниматели: 1 359</li>
+                        <li>крестьянские/фермерские хозяйства: 3 716</li>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Инвестиции в основной капитал:</span> 44,7 млрд. тенге (3-е место по ТО)</p>
+                        <li>снабжение электроэнергией: 30,6 млрд. тенге</li>
+                        <li>сельское хозяйство: 7,9 млрд. тенге</li>
+                        <li>операции с недвижимым имуществом: 3 млрд. тенге</li>
+                        <button><a href="#" target="_blank"></a></button>
                     </div>
                 `
-            },*/
+            },
         ];
 
         // Add points to the map
