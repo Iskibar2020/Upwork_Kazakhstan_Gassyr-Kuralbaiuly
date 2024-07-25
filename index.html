@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Leaflet Map with Custom Markers</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+    <style>
+        #map {
+            height: 600px;
+        }
+
+        .popup-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: auto auto auto;
+            gap: 5px;
+            width: 200px;
+        }
+
+        .popup-content h4 {
+            grid-column: span 2;
+            margin: 0;
+            font-size: 16px;
+            font-weight: bold;
+        }
+
+        .popup-content p {
+            grid-column: span 2;
+            margin: 5px 0;
+            font-size: 14px;
+        }
+
+        .popup-content .population {
+            grid-column: span 1;
+            font-size: 14px;
+        }
+
+        .popup-content .button-container {
+            grid-column: span 2;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .popup-content button {
+            width: 48%;
+            padding: 5px;
+            font-size: 14px;
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            text-align: center;
+        }
+
+        .popup-content button a {
+            color: white;
+            text-decoration: none;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="map"></div>
+    <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+    <script>
+        // Initialize the map
+        var map = L.map('map').setView([51.505, -0.09], 13);
+
+        // Add OpenStreetMap tiles
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+            maxZoom: 19,
+            attribution: '© OpenStreetMap'
+        }).addTo(map);
+
+        // Custom icon
+        var customIcon = L.icon({
+            iconUrl: 'https://example.com/custom-marker.png', // Replace with your custom marker image URL
+            iconSize: [38, 95], // size of the icon
+            iconAnchor: [22, 94], // point of the icon which will correspond to marker's location
+            popupAnchor: [-3, -76] // point from which the popup should open relative to the iconAnchor
+        });
+
+        // Array of points with detailed information
+        var points = [
+            {
+                coords: [51.505, -0.09],
+                title: "Pavlodar Region",
+                content: `
+                    <div class="popup-content">
+                        <h4>Pavlodar Region</h4>
+                        <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
+                        <p class="population">Population: 751000</p>
+                        <p class="population">Population: 751000</p>
+                        <p class="population">Population: 751000</p>
+                        <p class="population">Population: 751000</p>
+                        <button><a href="#" target="_blank">Learn More</a></button>
+                        <button><a href="#" target="_blank">Industrial Insights</a></button>
+                    </div>
+                `
+            },
+            // Add more points with similar structure
+        ];
+
+        // Add points to the map
+        points.forEach(function (point) {
+            L.marker(point.coords, { icon: customIcon })
+                .addTo(map)
+                .bindPopup(point.content);
+        });
+    </script>
+</body>
+
+</html>
