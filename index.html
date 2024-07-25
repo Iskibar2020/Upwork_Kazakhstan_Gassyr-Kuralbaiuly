@@ -19,12 +19,12 @@
         .leaflet-popup-content-wrapper,
         .leaflet-popup-tip {
             background-color: rgba(50, 50, 50, .9);
-            width: 320px;
+            width: 370px;
         }
 
         .leaflet-popup-content {
             margin: 10px;
-            width: 300px;
+            width: 350px;
         }
 
         .leaflet-popup-close-button {
@@ -37,7 +37,7 @@
             grid-template-columns: 1fr 1fr;
             grid-template-rows: auto auto auto;
             gap: 5px;
-            width: 300px;
+            width: 350px;
         }
 
         .popup-content h3 {
@@ -58,8 +58,15 @@
         }
 
         .popup-content .population {
-            grid-column: span 1;
+            grid-column: span 2;
             font-size: 12px;
+            text-align: left;
+            text-justify: inter-word;
+        }
+
+        li {
+            grid-column: span 2;
+            color: #f0f0f0;
         }
 
         .popup-content .button-container {
@@ -106,6 +113,7 @@
 
         // Array of points with detailed information
         var points = [
+            /*
             {
                 coords: [43.0738056, 68.8423406],
                 title: "Baydibek District",
@@ -113,10 +121,10 @@
                     <div class="popup-content">
                         <h3>Baydibek District</h3>
                         <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;text-align:left"> Общая площадь</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Население <br></span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Численность действующих МСБ</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Инвестиции в основной капитал</span> 751000</p>
                         <button><a href="#" target="_blank">Learn More</a></button>
                         <button><a href="#" target="_blank">Industrial Insights</a></button>
                     </div>
@@ -129,7 +137,7 @@
                     <div class="popup-content">
                         <h3>Keles</h3>
                         <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Общая площадь</span> 751000</p>
                         <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
                         <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
                         <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
@@ -298,22 +306,36 @@
                     </div>
                 `
             },
+            */
             {
                 coords: [42.4204085, 68.7913655],
                 title: "Arys",
                 content: `
                     <div class="popup-content">
-                        <h3>Arys</h3>
+                        <h3>Арыс қаласы</h3>
                         <p>Pavlodar is an important industrial center, known for its metallurgy and manufacturing sectors.</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Population</span> 751000</p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Общая площадь: </span> 765,4 тыс. га </p>
+                        <li>пашни: 54,3 тыс. га (орошаемые – 28,8 тыс. га)</li>
+                        <li>пастбища: 548,3 тыс. га</li>
+                        <li>посевная площадь: 24,1 тыс. га</li>
+                        <br>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Население: </span> 78,1 тыс. человек (14-е место по ТО)</p>
+                        <br>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Численность действующих МСБ:</span> 4 645</p>
+                        <li>юридические лица: 642</li>
+                        <li>индивидуальные предприниматели: 2 991</li>
+                        <li>крестьянские/фермерские хозяйства: 1 012</li>
+                        <br>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Инвестиции в основной капитал:</span> 9,1 млрд. тенге (17-е место по ТО)</p>
+                        <li>юридические лица: 642</li>
+                        <li>обрабатывающая промышленность: 4,4 млрд. тенге</li>
+                        <li>сельское хозяйство: 1,3 млрд. тенге</li>
                         <button><a href="#" target="_blank">Learn More</a></button>
                         <button><a href="#" target="_blank">Industrial Insights</a></button>
                     </div>
                 `
             },
+            /*
             {
                 coords: [43.5135078, 68.4852075],
                 title: "Kentau",
@@ -377,7 +399,7 @@
                         <button><a href="#" target="_blank">Industrial Insights</a></button>
                     </div>
                 `
-            },
+            },*/
         ];
 
         // Add points to the map
