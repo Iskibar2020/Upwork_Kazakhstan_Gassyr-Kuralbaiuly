@@ -121,7 +121,7 @@
         }
 
         // Load the GeoJSON data
-        fetch('Turkistan.geojson')
+        fetch('https://iskibar2020.github.io/turkish_region_api/Turkistan.geojson')
             .then(response => response.json())
             .then(data => {
                 L.geoJSON(data, {
