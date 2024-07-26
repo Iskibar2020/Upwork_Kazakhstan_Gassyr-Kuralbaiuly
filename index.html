@@ -25,6 +25,7 @@
         .leaflet-popup-content {
             margin: 10px;
             width: 350px;
+            color: #f0f0f0;
         }
 
         .popup-content {
@@ -97,18 +98,39 @@
 
     <script>
         // Initialize the map
-        var map = L.map('map').setView([43.0738056, 68.8423406], 7);
+        const map = L.map('map').setView([43.0738056, 68.8423406], 7);
 
         // Add OpenStreetMap tiles
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
             maxZoom: 19,
             attribution: '© OpenStreetMap'
         }).addTo(map);
-        var customIcon = L.AwesomeMarkers.icon({ icon: 'briefcase', prefix: 'fa', markerColor: 'orange' });
+        const customIcon = L.AwesomeMarkers.icon({ icon: 'briefcase', prefix: 'fa', markerColor: 'orange' });
 
+        const polygonStyle = {
+            color: '#373737',
+            weight: 2,
+            opacity: 0.5,
+            fillColor: '#ACBABF ',
+            fillOpacity: 0.75
+        };
+        // Define a function to create popups
+        function onEachFeature(feature, layer) {
+            // Set the popup content to "Turkish Region"
+            layer.bindPopup('Turkish Region');
+        }
 
+        // Load the GeoJSON data
+        fetch('Turkistan.geojson')
+            .then(response => response.json())
+            .then(data => {
+                L.geoJSON(data, {
+                    style: polygonStyle,
+                    onEachFeature: onEachFeature
+                }).addTo(map);
+            });
         // Array of points with detailed information
-        var points = [
+        const points = [
 
             {
                 coords: [43.0738056, 68.8423406],
@@ -148,12 +170,12 @@
                         <li>юридические лица: 316</li>
                         <li>индивидуальные предприниматели: 3 244</li>
                         <li>крестьянские/фермерские хозяйства: 4 535</li>
-                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">10,9 млрд. тенге (16-е место по ТО)/p>
+                        <p class="population"><span style="color:#87ceeb;font-weight:bold;font-size: 13px;">Инвестиции в основной капитал:</span> 10,9 млрд. тенге (16-е место по ТО)</p>
                         <li>снабжение электроэнергией: 1,1 млрд. тенге</li>
                         <li>сельское хозяйство: 4,2 млрд. тенге</li>
                         <li>водоснабжение: 2,8 млрд. тенге</li>
                         <li>образование: 1,4 млрд. тенге</li>
-                        <button><a href="#" target="_blank"></a></button>
+                        <button><a href="#" target="_blank">More Info</a></button>
                     </div>
                 `
             },
@@ -275,7 +297,7 @@
                 `
             },
             {
-                coords: [44.682263, 67.1749084],
+                coords: [44.682263, 67.949084],
                 title: "Sozak District",
                 content: `
                     <div class="popup-content">
