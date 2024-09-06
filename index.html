@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
     <style>
         #map {
@@ -87,11 +88,122 @@
             color: white;
             text-decoration: none;
         }
+
+        .sidenav {
+            width: 250px;
+            position: fixed;
+            z-index: 1000;
+            top: 100px;
+            right: 40px;
+            background: rgba(227, 159, 159, 0.9);
+            overflow-x: hidden;
+            padding: 8px 0;
+            border-radius: 5%;
+        }
+
+        h2 {
+            margin-left: 40px;
+        }
+
+        @media screen and (max-height: 450px) {
+            .sidenav {
+                padding-top: 15px;
+            }
+
+            .sidenav a {
+                font-size: 18px;
+            }
+        }
     </style>
 </head>
 
 <body>
-    <div id="map"></div>
+
+    <div id="map">
+        <div class="sidenav">
+            <h2>ЗАПАСЫ ПОЛЕЗНЫХ<br>
+                ИСКОПАЕМЫХ:</h2>
+            <ul>
+                <li style="list-style: none; display: flex; align-items: center; margin-bottom: 10px;color: black;">
+                    <div style="
+                        width: 0;
+                        height: 0;
+                        border-left: 10px solid transparent;
+                        border-right: 10px solid transparent;
+                        border-top: 20px solid #f27e00;
+                        display: inline-block;
+                        margin-right: 10px;
+                    "></div>
+                    ФОСФОРИТЫ
+                </li>
+                <li style="list-style: none; display: flex; align-items: center; margin-bottom: 10px;color: black;">
+                    <div style="
+                        width: 15px; 
+                        height: 15px; 
+                        border-radius: 50%; 
+                        background-color: #fbe116;
+                        display: inline-block;
+                        margin-right: 10px;
+                    "></div>
+                    ЗОЛОТО
+                </li>
+                <li style="list-style: none; display: flex; align-items: center; margin-bottom: 10px;color: black;">
+                    <div style="
+                        width: 15px; 
+                        height: 15px; 
+                        border-radius: 50%; 
+                        background-color: #dd2b1c;
+                        display: inline-block;
+                        margin-right: 10px;
+                    "></div>
+                    <i class="fas fa-hexagon" style="margin-right: 5px;"></i><span>ВАНАДИЙ</span>
+                </li>
+                <li style="list-style: none; display: flex; align-items: center; margin-bottom: 10px;color: black;">
+                    <div style="
+                        width: 0;
+                        height: 0;
+                        border-left: 10px solid transparent;
+                        border-right: 10px solid transparent;
+                        border-bottom: 20px solid #00a3d4;
+                        display: inline-block;
+                        margin-right: 10px;
+                    "></div>
+                    УРАН
+                </li>
+                <li style="list-style: none; display: flex; align-items: center; margin-bottom: 10px;color: black;">
+                    <div style="
+                        height: 15px;
+                        width: 15px; 
+                        border: 2px solid black;
+                        display: inline-block;
+                        margin-right: 10px;
+                    "></div>
+                    ПРИРОДНЫЙ ГАЗ
+                </li>
+                <li style="list-style: none; display: flex; align-items: center; margin-bottom: 10px;color: black;">
+                    <div style="
+                        height: 15px;
+                        width: 15px; 
+                        background-color:  black;
+                        display: inline-block;
+                        margin-right: 10px;
+                    "></div>
+                    <i class="fas fa-coal" style="margin-right: 5px;"></i><span>УГОЛЬ</span>
+                </li>
+                <li style="list-style: none; display: flex; align-items: center; margin-bottom: 10px;color: black;">
+                    <div style="
+                        height: 15px;
+                        width: 6px; 
+                        background-color: #86d3e9;
+                        display: inline-block;
+                        margin-right: 10px;
+                    "></div>
+                    МИНЕРАЛЬНАЯ ВОДА
+                </li>
+            </ul>
+        </div>
+    </div>
+
     <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
     <script
         src="https://cdnjs.cloudflare.com/ajax/libs/Leaflet.awesome-markers/2.0.2/leaflet.awesome-markers.min.js"></script>
@@ -528,6 +640,186 @@
             },
         ];
 
+
+        // ФОСФОРИТЫ (Phosphorites)
+        var phosphorites = [
+            { coords: [43.1979077883, 69.3953087498] },
+            { coords: [43.0408633619, 69.3810319838] },
+            { coords: [43.08369366, 69.6737056875] },
+            { coords: [42.9337876166, 69.6879824536] },
+            { coords: [42.1628422507, 68.8670684065] }
+        ];
+
+        // ЗОЛОТО (Gold)
+        var gold = [
+            { coords: [44.5470621786, 67.8391412520] },
+            { coords: [44.6255843918, 68.0033240614] },
+            { coords: [44.4399864333, 68.0675695086] },
+            { coords: [43.6833178334, 68.5672563198] },
+            { coords: [43.6190723863, 68.3031361482] },
+            { coords: [43.3977825127, 68.0889846576] },
+            { coords: [43.2621532354, 68.5815330858] },
+            { coords: [42.3056099111, 69.8521652630] },
+            { coords: [42.2699179960, 70.0449016044] },
+            { coords: [42.2556412299, 70.3375753081] },
+            { coords: [41.6702938225, 69.4238622819] },
+            { coords: [41.5917716093, 69.3239249197] },
+            { coords: [41.5489413112, 68.9027603216] }
+        ];
+
+        // ВАНАДИЙ (Vanadium)
+        var vanadium = [
+            { coords: [44.4399864333, 67.8819715501] },
+            { coords: [44.2900803899, 68.3245512972] },
+            { coords: [42.6982209770, 70.1733924987] },
+            { coords: [42.5268997846, 70.0663167535] },
+            { coords: [42.1842573998, 70.5231732666] },
+            { coords: [42.2627796130, 70.7587399062] },
+            { coords: [42.1057351866, 70.2519147119] },
+            { coords: [41.7059857376, 69.0598047480] },
+            { coords: [41.8844453130, 68.7885461934] },
+            { coords: [41.7059857376, 69.6308753894] },
+            { coords: [41.8059230998, 69.9877945403] }
+        ];
+
+        // УРАН (Uranium)
+        var uranium = [
+            { coords: [44.7612136691, 68.0318775935] },
+            { coords: [44.6541379238, 68.5958098519] },
+            { coords: [44.4970934974, 68.9241754707] },
+            { coords: [44.0830672824, 68.2817209991] },
+            { coords: [44.0330986013, 68.8170997254] },
+            { coords: [43.7118713655, 68.8884835556] },
+            { coords: [42.2913331450, 66.7255535013] }
+        ];
+
+        // ПРИРОДНЫЙ ГАЗ (Natural Gas)
+        var naturalGas = [
+            { coords: [44.2543884748, 68.0961230407] },
+            { coords: [44.4399864333, 68.6172250009] }
+        ];
+
+        // УГОЛЬ (Coal)
+        var coal = [
+            { coords: [43.5548269391, 69.3239249197] }
+        ];
+
+        // МИНЕРАЛЬНАЯ ВОДА (Mineral Water)
+        var mineralWater = [
+            { coords: [42.5554533167, 68.3531048293] },
+            { coords: [42.5483149337, 69.1240501952] },
+            { coords: [41.4704190980, 68.5743947028] }
+        ];
+
+        // Unnamed Locations
+        var unnamed = [
+            { coords: [41.3347898207, 67.5036372502] },
+            { coords: [40.8279646264, 68.2317523180] },
+            { coords: [41.4347271829, 68.7885461934] },
+            { coords: [41.8630301640, 69.4452774310] },
+            { coords: [42.5483149337, 70.2876066270] },
+            { coords: [42.3841321243, 68.5458411708] },
+            { coords: [42.9409259996, 69.2239875574] },
+            { coords: [43.2478764694, 68.3959351274] },
+            { coords: [43.5691037052, 68.4958724896] },
+            { coords: [43.7547016636, 69.2239875574] }
+        ];
+        phosphorites.forEach(function (item) {
+            // Create a custom Font Awesome icon
+            var faIcon = L.divIcon({
+                html: '<div style="width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-top: 20px solid #f27e00;"></div>',  // Add hex color directly in the tag
+                className: '',  // Keep this empty so it doesn't interfere with the custom marker
+                iconSize: [50, 50],  // Size of the marker (adjust to fit your triangle)
+                iconAnchor: [25, 50]  // Anchor the marker at the triangle's tip
+            });
+
+            // Add the marker to the map with a popup
+            var marker = L.marker(item.coords, { icon: faIcon }).addTo(map);
+        });
+        gold.forEach(function (item) {
+            // Create a custom Font Awesome icon
+            var faIcon = L.divIcon({
+                html: '<div style="width: 15px; height: 15px; border-radius: 50%; background-color: #fbe116;"></div>',  // Add hex color directly in the tag
+                className: '',  // Keep this empty so it doesn't interfere with the custom marker
+                iconSize: [50, 50],  // Size of the marker (adjust to fit your triangle)
+                iconAnchor: [25, 50]  // Anchor the marker at the triangle's tip
+            });
+
+            // Add the marker to the map with a popup
+            var marker = L.marker(item.coords, { icon: faIcon }).addTo(map);
+        });
+        vanadium.forEach(function (item) {
+            // Create a custom Font Awesome icon
+            var faIcon = L.divIcon({
+                html: '<div style="width: 15px; height: 15px; border-radius: 50%; background-color: #dd2b1c;"></div>',  // Add hex color directly in the tag
+                className: '',  // Keep this empty so it doesn't interfere with the custom marker
+                iconSize: [50, 50],  // Size of the marker (adjust to fit your triangle)
+                iconAnchor: [25, 50]  // Anchor the marker at the triangle's tip
+            });
+
+            // Add the marker to the map with a popup
+            var marker = L.marker(item.coords, { icon: faIcon }).addTo(map);
+        });
+        uranium.forEach(function (item) {
+            // Create a custom Font Awesome icon
+            var faIcon = L.divIcon({
+                html: '<div style="width: 0; height: 0; border-left: 10px solid transparent; border-right: 10px solid transparent; border-bottom: 20px solid #00a3d4;"></div>',  // Add hex color directly in the tag
+                className: '',  // Keep this empty so it doesn't interfere with the custom marker
+                iconSize: [50, 50],  // Size of the marker (adjust to fit your triangle)
+                iconAnchor: [25, 50]  // Anchor the marker at the triangle's tip
+            });
+
+            // Add the marker to the map with a popup
+            var marker = L.marker(item.coords, { icon: faIcon }).addTo(map);
+        });
+        naturalGas.forEach(function (item) {
+            // Create a custom Font Awesome icon
+            var faIcon = L.divIcon({
+                html: '<div style="height: 15px;width: 15px; border: 2px solid black;"></div>',  // Add hex color directly in the tag
+                className: '',  // Keep this empty so it doesn't interfere with the custom marker
+                iconSize: [50, 50],  // Size of the marker (adjust to fit your triangle)
+                iconAnchor: [25, 50]  // Anchor the marker at the triangle's tip
+            });
+
+            // Add the marker to the map with a popup
+            var marker = L.marker(item.coords, { icon: faIcon }).addTo(map);
+        });
+        coal.forEach(function (item) {
+            // Create a custom Font Awesome icon
+            var faIcon = L.divIcon({
+                html: '<div style="height: 15px;width: 15px; background-color: black"></div>',  // Add hex color directly in the tag
+                className: '',  // Keep this empty so it doesn't interfere with the custom marker
+                iconSize: [50, 50],  // Size of the marker (adjust to fit your triangle)
+                iconAnchor: [25, 50]  // Anchor the marker at the triangle's tip
+            });
+
+            // Add the marker to the map with a popup
+            var marker = L.marker(item.coords, { icon: faIcon }).addTo(map);
+        });
+        mineralWater.forEach(function (item) {
+            // Create a custom Font Awesome icon
+            var faIcon = L.divIcon({
+                html: '<div style="height: 15px;width: 6px; background-color: #86d3e9"></div>',  // Add hex color directly in the tag
+                className: '',  // Keep this empty so it doesn't interfere with the custom marker
+                iconSize: [50, 50],  // Size of the marker (adjust to fit your triangle)
+                iconAnchor: [25, 50]  // Anchor the marker at the triangle's tip
+            });
+
+            // Add the marker to the map with a popup
+            var marker = L.marker(item.coords, { icon: faIcon }).addTo(map);
+        });
+        unnamed.forEach(function (item) {
+            // Create a custom Font Awesome icon
+            var faIcon = L.divIcon({
+                html: '<div style="width: 15px; height: 15px; border-radius: 50%; background-color: #008f4b;"></div>',  // Add hex color directly in the tag
+                className: '',  // Keep this empty so it doesn't interfere with the custom marker
+                iconSize: [50, 50],  // Size of the marker (adjust to fit your triangle)
+                iconAnchor: [25, 50]  // Anchor the marker at the triangle's tip
+            });
+
+            // Add the marker to the map with a popup
+            var marker = L.marker(item.coords, { icon: faIcon }).addTo(map);
+        });
         // Add points to the map
         points.forEach(function (point) {
             L.marker(point.coords, { icon: customIcon })
