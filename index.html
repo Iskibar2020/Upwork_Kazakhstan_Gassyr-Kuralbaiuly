@@ -12,6 +12,7 @@
     <link href="https://netdna.bootstrapcdn.com/font-awesome/4.0.0/css/font-awesome.css" rel="stylesheet">
     <style>
         #map {
+            position: relative;
             height: 600px;
         }
 
@@ -91,14 +92,18 @@
 
         .sidenav {
             width: 250px;
-            position: fixed;
-            z-index: 1000;
-            top: 100px;
-            right: 40px;
+            position: absolute;
+            top: 50%;
+            /* Positions the top of the sidebar at the center of the map */
+            right: 20px;
+            /* Aligns the sidebar to the right side of the map */
+            transform: translateY(-50%);
+            /* Adjusts the position so it's vertically centered */
             background: rgba(221, 155, 155, 0.9);
             overflow-x: hidden;
             padding: 8px 0;
             border-radius: 5%;
+            z-index: 1000;
         }
 
         h2 {
